@@ -2,26 +2,29 @@ import Slider from "react-slick";
 
 const SliderComp = () => {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
   return (
     <div>
       <Slider {...settings}>
-        <div className="!flex items-center bg-gray-100">
+        <div className="!flex items-center px-6">
           <div className="">
-            <div className="text-6xl font-bold">
+            <div className="text-4xl font-bold">
               Göz Alıcı, Hafif ve Dayanıklı Tasarım
             </div>
-            <div className="text-">
+            <div className="text-lg my-4 ">
               Dayanıklı, renkle işlenmiş arka cama ve konturlu kenarlara sahip
               göz alıcı bir tasarım, Dynamic Island, 2 kat Telefoto özellikli 48
               MP Ana Kamera ve USB-C ile, iPhone büyük yeniliklere imza atıyor
             </div>
-            <div>İncele</div>
+            <div className="border rounded-full cursor-pointer text-2xl w-[200px] h-16 flex items-center justify-center bg-gray-200">
+              İncele
+            </div>
           </div>
 
           <img
