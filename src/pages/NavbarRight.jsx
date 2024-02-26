@@ -1,7 +1,19 @@
 import { IoSearch } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCartTotal } from "../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
+
 const NavbarRight = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { itemCount } = useSelector((state) => state.carts);
+
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [dispatch]);
   return (
     <div className="flex items-center gap-8">
       <div className="flex items-center border p-3 rounded-full bg-gray-200">
@@ -13,9 +25,11 @@ const NavbarRight = () => {
         <IoSearch size={28} />
       </div>
       <FaRegHeart size={28} />
-      <div className="relative">
+
+      {/* kart sayfasına yönledirdim */}
+      <div onClick={() => navigate("cart")} className="relative">
         <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center ">
-          3
+          {itemCount}
         </div>
         <SlBasket size={28} />
       </div>
