@@ -9,3 +9,7 @@ React Slick & Slick Carousel ile ürün karuselleri
 React Paginate ile sayfalama
 React Icons ile simgelerin kullanımı
 Tailwind CSS ile duyarlı tasarım
+
+<h3>Ekran Görüntüsü</h3>
+
+![](shopping.gif)
